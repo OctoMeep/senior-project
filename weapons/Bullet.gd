@@ -1,6 +1,5 @@
 extends Area2D
 
-
 var speed = 800
 var target = "enemy"
 var damage = 1
@@ -17,3 +16,11 @@ func _on_Area2D_body_entered(body):
 	if body.is_in_group(target):
 		body.hit(damage)
 		queue_free()
+
+func set_lifetime(lifetime):
+	$LifeTimer.wait_time = lifetime
+	$LifeTimer.start()
+
+
+func _on_LifeTimer_timeout():
+	queue_free()

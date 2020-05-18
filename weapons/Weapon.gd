@@ -17,9 +17,10 @@ func _physics_process(delta):
 
 func shoot():
 	var bullet = Bullet.instance()
-	bullet.position = global_position
+	get_tree().get_current_scene().add_child(bullet)
+	bullet.position = $StartPoint.global_position
 	bullet.rotation = rotation
 	bullet.speed = bullet_speed
 	bullet.target = "enemy"
 	bullet.damage = bullet_damage
-	get_tree().get_current_scene().add_child(bullet)
+	
