@@ -2,6 +2,7 @@ extends Node2D
 
 export (PackedScene) var Bullet
 export var bullet_speed = 1000
+export var bullet_damage = 1
 
 func _ready():
 	pass # Replace with function body.
@@ -12,8 +13,13 @@ func _physics_process(delta):
 	$AnimatedSprite.flip_v = rotation > PI / 2 and rotation < 3 * PI / 2
 	if Input.is_action_pressed("shoot") and $ShootTimer.is_stopped():
 		$ShootTimer.start()
-		var bullet = Bullet.instance()
-		bullet.position = global_position
-		bullet.rotation = rotation
-		bullet.speed = bullet_speed
-		get_tree().get_current_scene().add_child(bullet)
+		shoot()
+
+func shoot():
+	var bullet = Bullet.instance()
+	bullet.position = global_position
+	bullet.rotation = rotation
+	bullet.speed = bullet_speed
+	bullet.target = "enemy"
+	bullet.damage = bullet_damage
+	get_tree().get_current_scene().add_child(bullet)
