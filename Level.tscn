@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://enemies/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://enemies/Dasher.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Level.gd" type="Script" id=3]
 
 [node name="Main" type="Node"]
+script = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 690.281, 320.157 )
 
-[node name="Enemy" parent="." instance=ExtResource( 2 )]
-position = Vector2( 938.263, 743.948 )
+[node name="Dasher" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1883.93, 832.778 )

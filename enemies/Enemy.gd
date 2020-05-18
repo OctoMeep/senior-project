@@ -8,7 +8,10 @@ func _ready():
 	pass # Replace with function body.
 
 
-func _process(delta):
+func _physics_process(delta):
+	do_contact_damage()
+
+func do_contact_damage():
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
 		if (collision.collider.is_in_group("player")):

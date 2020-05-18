@@ -29,9 +29,11 @@ func _physics_process(delta):
 			hit(collision.collider.contact_dmg)
 
 func hit(damage):
-	health -= damage
-	if health <= 0:
-		die()
+	if $InvulTimer.is_stopped():
+		health -= damage
+		if health <= 0:
+			die()
+		$InvulTimer.start()
 	
 func die():
 	get_tree().quit(0)
