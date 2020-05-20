@@ -1,8 +1,8 @@
 extends Area2D
 
-var speed = 800
-var target = "enemy"
-var damage = 1
+var speed
+var target
+var damage
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

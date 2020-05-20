@@ -23,3 +23,4 @@ func _physics_process(delta):
 				if (velocity.length() < 100):
 					state = State.CHASING
 				move_and_slide(velocity)
+	do_contact_damage()
