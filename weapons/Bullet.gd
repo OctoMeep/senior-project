@@ -17,6 +17,13 @@ func _on_Area2D_body_entered(body):
 		body.hit(damage)
 		queue_free()
 
+func set_target(t):
+	target = t
+	if t == "enemy":
+		$AnimatedSprite.play("player")
+	else:
+		$AnimatedSprite.play("enemy")
+
 func set_lifetime(lifetime):
 	$LifeTimer.wait_time = lifetime
 	$LifeTimer.start()

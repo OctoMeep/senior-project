@@ -21,6 +21,6 @@ func shoot():
 	bullet.position = $StartPoint.global_position
 	bullet.rotation = rotation
 	bullet.speed = bullet_speed
-	bullet.target = "enemy"
+	bullet.set_target("enemy")
 	bullet.damage = bullet_damage
 	

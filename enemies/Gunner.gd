@@ -30,5 +30,5 @@ func shoot():
 	bullet.position = position
 	bullet.rotation = PI + position.angle_to_point(player.position)
 	bullet.speed = 1000
-	bullet.target = "player"
+	bullet.set_target("player")
 	bullet.damage = 2

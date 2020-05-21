@@ -5,11 +5,32 @@ var screen_size
 export var max_health = 10
 var health = max_health
 
+var weapon_types = {
+	"Weapon": preload("res://weapons/Weapon.tscn"),
+	"Shotgun": preload("res://weapons/Shotgun.tscn")
+}
+
+var main_weapon = "Weapon"
+var off_weapon = "Shotgun"
+var weapon
+
 func _ready():
 	screen_size = get_viewport_rect().size
+	weapon = weapon_types[main_weapon].instance()
+	add_child(weapon)
 
 
 func _physics_process(delta):
+	if Input.is_action_just_pressed("switch") and off_weapon != null:
+		var temp = main_weapon
+		main_weapon = off_weapon
+		off_weapon = temp
+		print(main_weapon)
+		print(off_weapon)
+		weapon.queue_free()
+		weapon = weapon_types[main_weapon].instance()
+		add_child(weapon)
+	
 	var velocity = Vector2()
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= 1
