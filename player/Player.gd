@@ -58,6 +58,10 @@ func hit(damage):
 		if health <= 0:
 			die()
 		$InvulTimer.start()
+
+func heal(amount):
+	health = clamp(health + amount, 0, max_health)
+	emit_signal("health_update", health)
 	
 func die():
 	get_tree().quit(0)
