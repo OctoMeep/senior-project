@@ -1,16 +1,18 @@
 extends KinematicBody2D
 
+signal health_update
+
 export var speed: int
 var screen_size
 export var max_health = 10
 var health = max_health
 
 var weapon_types = {
-	"Weapon": preload("res://weapons/Weapon.tscn"),
+	"Rifle": preload("res://weapons/Rifle.tscn"),
 	"Shotgun": preload("res://weapons/Shotgun.tscn")
 }
 
-var main_weapon = "Weapon"
+var main_weapon = "Rifle"
 var off_weapon = "Shotgun"
 var weapon
 
@@ -52,6 +54,7 @@ func _physics_process(delta):
 func hit(damage):
 	if $InvulTimer.is_stopped():
 		health -= damage
+		emit_signal("health_update", health)
 		if health <= 0:
 			die()
 		$InvulTimer.start()

@@ -3,8 +3,10 @@ extends "res://enemies/Enemy.gd"
 enum State {CHASING, DASHING}
 var state = State.CHASING
 var chasing_speed = 300
-var player
 var velocity
+
+func _ready():
+	contact_dmg = 3
 
 func _physics_process(delta):
 	match state:
@@ -24,3 +26,4 @@ func _physics_process(delta):
 					state = State.CHASING
 				move_and_slide(velocity)
 	do_contact_damage()
+

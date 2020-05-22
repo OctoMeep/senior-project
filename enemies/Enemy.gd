@@ -3,6 +3,7 @@ extends KinematicBody2D
 var max_health = 10
 var health = 10
 var contact_dmg = 1
+var player
 
 func _ready():
 	pass # Replace with function body.
