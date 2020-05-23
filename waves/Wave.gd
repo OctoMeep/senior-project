@@ -6,7 +6,8 @@ var entity_types = {
 	"Dasher": preload("res://enemies/Dasher.tscn"),
 	"Gunner": preload("res://enemies/Gunner.tscn"),
 	"PickupHealth": preload("res://pickups/PickupHealth.tscn"),
-	"PickupWeapon": preload("res://pickups/PickupWeapon.tscn")
+	"PickupWeapon": preload("res://pickups/PickupWeapon.tscn"),
+	"Box": preload("res://terrain/Box.tscn")
 }
 
 func spawn(type, pos):
