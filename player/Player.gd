@@ -27,11 +27,7 @@ func _physics_process(delta):
 		var temp = main_weapon
 		main_weapon = off_weapon
 		off_weapon = temp
-		print(main_weapon)
-		print(off_weapon)
-		weapon.queue_free()
-		weapon = weapon_types[main_weapon].instance()
-		add_child(weapon)
+		update_weapon()
 	
 	var velocity = Vector2()
 	if Input.is_action_pressed("move_left"):
@@ -50,6 +46,11 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i)
 		if (collision.collider.is_in_group("enemy")):
 			hit(collision.collider.contact_dmg)
+
+func update_weapon():
+	weapon.queue_free()
+	weapon = weapon_types[main_weapon].instance()
+	add_child(weapon)
 
 func hit(damage):
 	if $InvulTimer.is_stopped():
