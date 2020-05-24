@@ -21,10 +21,7 @@ func _on_Area2D_body_entered(body):
 
 func set_target(t):
 	target = t
-	if t == "enemy":
-		$AnimatedSprite.play("player")
-	else:
-		$AnimatedSprite.play("enemy")
+	$AnimatedSprite.play(target)
 
 func set_lifetime(lifetime):
 	$LifeTimer.wait_time = lifetime

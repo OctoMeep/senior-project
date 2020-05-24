@@ -4,7 +4,7 @@
 [ext_resource path="res://player/Player.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32.0073, 31.9577 )
+extents = Vector2( 8, 8 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -21,12 +21,13 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
-speed = 400
+speed = 100
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 2 )
 
 [node name="InvulTimer" type="Timer" parent="."]

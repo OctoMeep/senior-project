@@ -1,7 +1,7 @@
 extends Node2D
 
 export (PackedScene) var Bullet
-export var bullet_speed = 1000
+export var bullet_speed = 250
 export var bullet_damage = 1
 
 func _physics_process(delta):
