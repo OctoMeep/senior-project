@@ -9,11 +9,12 @@ var health = max_health
 
 var weapon_types = {
 	"Rifle": preload("res://weapons/Rifle.tscn"),
-	"Shotgun": preload("res://weapons/Shotgun.tscn")
+	"Shotgun": preload("res://weapons/Shotgun.tscn"),
+	"SniperRifle": preload("res://weapons/SniperRifle.tscn")
 }
 
 var main_weapon = "Rifle"
-var off_weapon = "Shotgun"
+var off_weapon = "SniperRifle"
 var weapon
 
 func _ready():
