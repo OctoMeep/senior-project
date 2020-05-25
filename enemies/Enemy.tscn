@@ -33,6 +33,7 @@ extents = Vector2( 8, 12.9752 )
 [node name="Enemy" type="KinematicBody2D" groups=[
 "enemy",
 ]]
+scale = Vector2( 0.984911, 1 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true

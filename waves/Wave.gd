@@ -5,6 +5,7 @@ signal done
 var player
 var kills = 0
 var needed
+var level
 
 var entity_types = {
 	"Dasher": preload("res://enemies/Dasher.tscn"),

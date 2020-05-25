@@ -16,6 +16,7 @@ func run_wave():
 	if wave != null:
 		remove_child(wave)
 	wave = waves[wave_num].instance()
+	wave.level = self
 	wave.player = player
 	add_child(wave)
 	wave.connect("done", self, "next_wave")
