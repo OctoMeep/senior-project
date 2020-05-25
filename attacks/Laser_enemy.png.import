@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Laser_player.png-011d3f421eb16761152989d1ba18b73f.stex"
+path="res://.import/Laser_enemy.png-ab1418c0a99ad3f4d77663eb03e69bdd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://weapons/Laser_player.png"
-dest_files=[ "res://.import/Laser_player.png-011d3f421eb16761152989d1ba18b73f.stex" ]
+source_file="res://attacks/Laser_enemy.png"
+dest_files=[ "res://.import/Laser_enemy.png-ab1418c0a99ad3f4d77663eb03e69bdd.stex" ]
 
 [params]
 

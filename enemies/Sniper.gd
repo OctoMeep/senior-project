@@ -1,6 +1,6 @@
 extends "res://enemies/Enemy.gd"
 
-var Laser = preload("res://weapons/Laser.tscn")
+var Laser = preload("res://attacks/Laser.tscn")
 
 enum State {CHASING, CHARGING, SHOOTING}
 var state = State.CHARGING

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Bullet-enemy.png-9bd4dfa4a3b394821069d490f502c270.stex"
+path="res://.import/Bullet-enemy.png-f346f62c2b6687e1ca013f9a07ac635c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://weapons/Bullet-enemy.png"
-dest_files=[ "res://.import/Bullet-enemy.png-9bd4dfa4a3b394821069d490f502c270.stex" ]
+source_file="res://attacks/Bullet-enemy.png"
+dest_files=[ "res://.import/Bullet-enemy.png-f346f62c2b6687e1ca013f9a07ac635c.stex" ]
 
 [params]
 

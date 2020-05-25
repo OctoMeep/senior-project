@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal killed
+
 var max_health = 10
 var health = 10
 var contact_dmg = 1
@@ -24,4 +26,5 @@ func hit(damage):
 		die()
 
 func die():
+	emit_signal("killed")
 	queue_free()

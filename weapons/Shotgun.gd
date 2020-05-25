@@ -1,5 +1,7 @@
 extends "res://weapons/Weapon.gd"
 
+var Bullet = preload("res://attacks/Bullet.tscn")
+
 func shoot():
 	for i in 5:
 		var bullet = Bullet.instance()

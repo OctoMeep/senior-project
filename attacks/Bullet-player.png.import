@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Bullet-player.png-91a8c1449889d35cb2e22bcb08c90b0b.stex"
+path="res://.import/Bullet-player.png-181991c3b8ed33429e53c7da4b76c748.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://weapons/Bullet-player.png"
-dest_files=[ "res://.import/Bullet-player.png-91a8c1449889d35cb2e22bcb08c90b0b.stex" ]
+source_file="res://attacks/Bullet-player.png"
+dest_files=[ "res://.import/Bullet-player.png-181991c3b8ed33429e53c7da4b76c748.stex" ]
 
 [params]
 

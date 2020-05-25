@@ -8,13 +8,14 @@ export var max_health = 10
 var health = max_health
 
 var weapon_types = {
+	"Melee": preload("res://weapons/Melee.tscn"),
 	"Rifle": preload("res://weapons/Rifle.tscn"),
 	"Shotgun": preload("res://weapons/Shotgun.tscn"),
 	"SniperRifle": preload("res://weapons/SniperRifle.tscn")
 }
 
-var main_weapon = "Rifle"
-var off_weapon = "SniperRifle"
+var main_weapon = "Melee"
+var off_weapon
 var weapon
 
 func _ready():
@@ -66,4 +67,5 @@ func heal(amount):
 	emit_signal("health_update", health)
 	
 func die():
+	print("rip")
 	get_tree().quit(0)
