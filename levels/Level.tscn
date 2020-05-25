@@ -38,3 +38,6 @@ cell_size = Vector2( 16, 16 )
 compatibility_mode = true
 collision_layer = 3
 format = 1
+
+[node name="StartPoint" type="Node2D" parent="."]
+position = Vector2( 272, 192 )

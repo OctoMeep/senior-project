@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://levels/LevelOne.tscn" type="PackedScene" id=2]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ui/HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://levels/LevelTwo.tscn" type="PackedScene" id=5]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+levels = {
+"LevelOne": ExtResource( 2 ),
+"LevelTwo": ExtResource( 5 )
+}
+first_level = "LevelTwo"
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+
+[node name="HUD" parent="." instance=ExtResource( 4 )]
+visible = false

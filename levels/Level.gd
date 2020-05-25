@@ -6,10 +6,10 @@ export var waves = []
 
 var wave_num = 0
 var wave
-onready var player = $Player
+var player
 
 func _ready():
-	print(waves)
+	print(player)
 	run_wave()
 
 func run_wave():
@@ -29,4 +29,10 @@ func next_wave():
 		run_wave()
 
 func finish():
-	emit_signal("done")
+	for node in get_children():
+		if "active" in node:
+			node.active = true
+
+func leave(next_level):
+	print(next_level)
+	emit_signal("done", next_level)
