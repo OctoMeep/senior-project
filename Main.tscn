@@ -16,5 +16,7 @@ first_level = "LevelTwo"
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 
-[node name="HUD" parent="." instance=ExtResource( 4 )]
-visible = false
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource( 4 )]

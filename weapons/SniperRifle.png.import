@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/health_progress.png-f3c58ad98beff4218848fea900c3fe42.stex"
+path="res://.import/SniperRifle.png-2665d85cfa41843b1c5728696c0cdd0f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/health_progress.png"
-dest_files=[ "res://.import/health_progress.png-f3c58ad98beff4218848fea900c3fe42.stex" ]
+source_file="res://weapons/SniperRifle.png"
+dest_files=[ "res://.import/SniperRifle.png-2665d85cfa41843b1c5728696c0cdd0f.stex" ]
 
 [params]
 

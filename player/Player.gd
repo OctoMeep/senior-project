@@ -25,6 +25,8 @@ func _ready():
 
 
 func _physics_process(delta):
+	$AnimatedSprite.flip_h = get_global_mouse_position().x < global_position.x
+	
 	if Input.is_action_just_pressed("switch") and off_weapon != null:
 		var temp = main_weapon
 		main_weapon = off_weapon
@@ -40,6 +42,11 @@ func _physics_process(delta):
 		velocity.y -= 1
 	if Input.is_action_pressed("move_down"):
 		velocity.y += 1
+	
+	if velocity.length() == 0:
+		$AnimatedSprite.play("default")
+	else:
+		$AnimatedSprite.play("walking")
 	
 	move_and_slide(velocity.normalized() * speed)
 	position.x = clamp(position.x, 0, screen_size.x)

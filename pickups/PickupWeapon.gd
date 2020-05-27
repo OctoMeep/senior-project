@@ -2,6 +2,9 @@ extends "res://pickups/Pickup.gd"
 
 var weapon_type = "Rifle"
 
+func _ready():
+	$AnimatedSprite.play(weapon_type)
+
 func set_weapon_type(type):
 	weapon_type = type
 	$AnimatedSprite.play(weapon_type)

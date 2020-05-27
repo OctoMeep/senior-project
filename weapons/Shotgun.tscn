@@ -16,12 +16,12 @@ animations = [ {
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" parent="." index="0"]
-position = Vector2( 8, 0 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 8, 2 )
+scale = Vector2( 1, 1 )
 frames = SubResource( 1 )
 
 [node name="ShootTimer" parent="." index="1"]
 wait_time = 1.0
 
 [node name="StartPoint" parent="." index="2"]
-position = Vector2( 16, 0 )
+position = Vector2( 8, 0 )

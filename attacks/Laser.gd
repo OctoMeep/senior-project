@@ -11,7 +11,7 @@ var done = false
 func _ready():
 	if count == null: # First in the chain
 		get_tree().create_timer(lifetime).connect("timeout", self, "queue_free")
-		count = ceil(length / 16)
+		count = ceil(length / 5)
 	if count != 0:
 		next = duplicate(7)
 		next.position = $NextPoint.position

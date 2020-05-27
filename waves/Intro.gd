@@ -1,15 +1,19 @@
 extends "res://waves/Wave.gd"
 
-var Drops = preload("res://drops/Drops.tscn")
 var PickupHealth = preload("res://pickups/PickupHealth.tscn")
 
 func _ready():
 	needed = 1
+	yield(get_tree().create_timer(1.0), "timeout")
+	message("Thank God my shift is finally over. I can't wait to get home and-\n(WASD to move.)", 5)
 	yield(get_tree().create_timer(5.0), "timeout")
-	var drops = Drops.instance()
-	drops.table = [{
+	var enemy = spawn("Dasher", Vector2(screen_size.x / 2, screen_size.y / 4), true)
+	enemy.add_drops([{
 		"chance": 1.0,
 		"drop": PickupHealth.instance()
-	}]
-	drops.level = level
-	spawn("Dasher", Vector2(100, 100), true).add_drops(drops)
+	}])
+	enemy.set_physics_process(false)
+	message("What's this robot doing here? The warehouse is closed, these guys shouldn't be up and about!", 5)
+	yield(get_tree().create_timer(5.0), "timeout")
+	enemy.set_physics_process(true)
+	message("Woah!\n(LEFT CLICK to use your tazer.)", 1)

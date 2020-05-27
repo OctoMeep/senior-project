@@ -1,6 +1,7 @@
 extends Node
 
 signal done
+signal messaged
 
 export var waves = []
 
@@ -18,9 +19,10 @@ func run_wave():
 	wave = waves[wave_num].instance()
 	wave.level = self
 	wave.player = player
-	add_child(wave)
 	wave.connect("done", self, "next_wave")
-
+	wave.connect("messaged", self, "message")
+	add_child(wave)
+	
 func next_wave():
 	if wave_num == waves.size() - 1:
 		finish()
@@ -36,3 +38,7 @@ func finish():
 func leave(next_level):
 	print(next_level)
 	emit_signal("done", next_level)
+
+func message(text, duration):
+	print(text)
+	emit_signal("messaged", text, duration)

@@ -7,5 +7,5 @@ func shoot():
 	add_child(attack)
 	attack.position = $StartPoint.position
 	attack.set_target("enemy")
-	attack.set_lifetime(0.2)
+	attack.set_lifetime(0.25)
 	attack.damage = 3

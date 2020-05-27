@@ -5,6 +5,7 @@ var Bullet = preload("res://attacks/Bullet.tscn")
 enum State {CHASING, SHOOTING}
 var state = State.CHASING
 var chasing_speed = 75
+var bullet_speed = 250
 var velocity
 
 func _physics_process(delta):
@@ -30,7 +31,7 @@ func shoot():
 	get_tree().get_current_scene().add_child(bullet)
 	bullet.position = position
 	bullet.rotation = PI + position.angle_to_point(player.position)
-	bullet.speed = 250
+	bullet.speed = bullet_speed
 	bullet.set_target("player")
 	bullet.damage = 2
 

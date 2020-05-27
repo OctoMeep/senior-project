@@ -1,9 +1,10 @@
 [gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://enemies/Enemy.tscn" type="PackedScene" id=1]
-[ext_resource path="res://enemies/Gunner.gd" type="Script" id=2]
+[ext_resource path="res://attacks/Gunner.gd" type="Script" id=2]
 [ext_resource path="res://enemies/Gunner_idle.png" type="Texture" id=3]
 [ext_resource path="res://enemies/Gunner_walking.png" type="Texture" id=4]
+
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 3 )
