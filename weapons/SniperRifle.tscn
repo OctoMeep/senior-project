@@ -9,7 +9,7 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" parent="." index="0"]
 position = Vector2( 8, 3 )
 scale = Vector2( 1, 1 )
-frame = 14
+frame = 7
 playing = true
 
 [node name="ShootTimer" parent="." index="1"]
@@ -23,4 +23,4 @@ position = Vector2( 16, 0 )
 rotation = -1.5708
 enabled = true
 cast_to = Vector2( 0, 1000 )
-collision_mask = 2
+collision_mask = 10244

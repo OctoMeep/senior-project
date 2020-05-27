@@ -26,6 +26,3 @@ position = Vector2( 248, 264 )
 [node name="Door2" parent="." index="4" instance=ExtResource( 5 )]
 position = Vector2( 248, 8 )
 next_level = "LevelThree"
-
-[node name="StartPoint" parent="." index="5"]
-position = Vector2( 240, 192 )

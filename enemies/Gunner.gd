@@ -5,7 +5,7 @@ var Bullet = preload("res://attacks/Bullet.tscn")
 enum State {CHASING, SHOOTING}
 var state = State.CHASING
 var chasing_speed = 75
-var bullet_speed = 250
+var bullet_speed = 200
 var velocity
 
 func _physics_process(delta):

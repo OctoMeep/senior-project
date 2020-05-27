@@ -10,6 +10,6 @@ func shoot():
 	laser.position = $StartPoint.global_position
 	laser.rotation = rotation
 	laser.set_target("enemy")
-	laser.damage = 3
+	laser.damage = 1
 	get_tree().get_current_scene().add_child(laser)
-	laser.add_collision_exception_with(self.get_parent())
+	#self.get_parent().add_collision_exception_with(laser)

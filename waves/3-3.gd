@@ -7,7 +7,7 @@ func _ready():
 	yield(get_tree().create_timer(1.0), "timeout")
 	var pickup = PickupWeapon.instance()
 	pickup.weapon_type = "SniperRifle"
-	spawn("Sniper", Vector2(screen_size.x / 2, screen_size / 2), true).add_drops([{
+	spawn("Sniper", Vector2(screen_size.x / 2, screen_size.y / 2), true).add_drops([{
 		"chance": 1.0,
 		"drop": pickup
 	}])

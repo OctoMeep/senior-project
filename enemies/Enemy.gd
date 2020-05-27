@@ -10,9 +10,11 @@ var contact_dmg = 1
 var player
 var drops
 var level
+var dead
 
 func _physics_process(delta):
 	if not $StartTimer.is_stopped():
+
 		return
 	do_contact_damage()
 
@@ -32,7 +34,8 @@ func add_drops(table):
 
 func hit(damage):
 	health -= damage
-	if health <= 0:
+	if health <= 0 and not dead:
+		dead = true
 		die()
 
 func die():

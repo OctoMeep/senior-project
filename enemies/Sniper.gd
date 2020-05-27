@@ -49,7 +49,7 @@ func shoot(target, lifetime):
 	laser.position = position
 	laser.rotation = PI + position.angle_to_point(target_pos)
 	laser.set_target(target)
-	laser.damage = 2
+	laser.damage = 1
 	get_tree().get_current_scene().add_child(laser)
-	laser.add_collision_exception_with(self)
+	#self.add_collision_exception_with(laser)
 

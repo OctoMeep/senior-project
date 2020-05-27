@@ -36,7 +36,7 @@ func next_wave():
 func finish():
 	for node in get_children():
 		if node.has_method("activate"):
-			node.activate(1)
+			node.activate()
 func message(text, duration):
 	print(text)
 	emit_signal("messaged", text, duration)

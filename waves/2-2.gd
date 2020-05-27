@@ -7,4 +7,4 @@ func _ready():
 	spawn("Dasher", Vector2(448, 128), true).add_drops(get_standard_drops())
 	spawn("Dasher", Vector2(screen_size.x / 2, screen_size.y / 2), true).add_drops(get_standard_drops())
 	spawn("Gunner", Vector2(192, 224), true).add_drops(get_standard_drops())
-	spawn("Gunner", Vector2(48, 272), true).add_drops(get_standard_drops())
+	spawn("Gunner", Vector2(272, 48), true).add_drops(get_standard_drops())

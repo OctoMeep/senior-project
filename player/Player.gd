@@ -14,8 +14,8 @@ var weapon_types = {
 	"SniperRifle": preload("res://weapons/SniperRifle.tscn")
 }
 
-var main_weapon = "Melee"
-var off_weapon
+export (String) var main_weapon = "Melee"
+export (String) var off_weapon
 var weapon
 
 func _ready():
@@ -62,6 +62,8 @@ func update_weapon():
 	add_child(weapon)
 
 func hit(damage):
+	if damage <= 0:
+		return
 	if $InvulTimer.is_stopped():
 		health -= damage
 		emit_signal("health_update", health)

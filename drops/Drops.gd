@@ -6,10 +6,7 @@ var level
 func drop():
 	for entry in table:
 		var roll = randf()
-		print(roll)
-		print(entry)
 		if roll <= entry.chance:
-			print("dropping")
 			var drop = entry.drop
 			level.add_child(drop)
 			drop.position = Vector2(

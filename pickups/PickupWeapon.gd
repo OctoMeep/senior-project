@@ -19,4 +19,4 @@ func apply_on_interact(player):
 		var old_type = player.main_weapon
 		player.main_weapon = weapon_type
 		player.update_weapon()
-		weapon_type = old_type
+		set_weapon_type(old_type)

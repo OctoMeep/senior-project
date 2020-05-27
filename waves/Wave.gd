@@ -19,6 +19,7 @@ var entity_types = {
 	"Dasher": preload("res://enemies/Dasher.tscn"),
 	"Gunner": preload("res://enemies/Gunner.tscn"),
 	"Sniper": preload("res://enemies/Sniper.tscn"),
+	"Crate": preload("res://enemies/Crate.tscn"),
 	"PickupHealth": preload("res://pickups/PickupHealth.tscn"),
 	"PickupWeapon": preload("res://pickups/PickupWeapon.tscn")
 }
@@ -40,8 +41,8 @@ func message(text, duration):
 	emit_signal("messaged", text, duration)
 
 func update_kills():
-	print("updating")
 	kills += 1
+	print(str(kills, "/", needed))
 	if kills == needed:
 		finalize()
 		emit_signal("done")

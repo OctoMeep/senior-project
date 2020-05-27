@@ -10,7 +10,7 @@ func _ready():
 		"chance": 1.0,
 		"drop": PickupHealth.instance()
 	}])
-	enemy.get_node("StartTimer").wait_time = 5.0
+	enemy.get_node("StartTimer").start(5.0)
 	message("What's this robot doing here? The warehouse is closed, these guys shouldn't be up and about!", 5)
 	yield(get_tree().create_timer(5.0), "timeout")
 	message("Woah!\n(LEFT CLICK to use your tazer.)", 3)

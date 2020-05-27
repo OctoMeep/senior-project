@@ -6,4 +6,4 @@ func _ready():
 	spawn("Gunner", Vector2(64, 64), true).add_drops(get_standard_drops())
 	spawn("Gunner", Vector2(448, 128), true).add_drops(get_standard_drops())
 	spawn("Gunner", Vector2(192, 224), true).add_drops(get_standard_drops())
-	spawn("Gunner", Vector2(48, 272), true).add_drops(get_standard_drops())
+	spawn("Gunner", Vector2(272, 48), true).add_drops(get_standard_drops())
