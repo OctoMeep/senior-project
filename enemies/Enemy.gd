@@ -11,13 +11,9 @@ var player
 var drops
 var level
 
-func _ready():
-	set_physics_process(false)
-	yield(get_tree().create_timer(0.5), "timeout")
-	set_physics_process(true)
-
-
 func _physics_process(delta):
+	if not $StartTimer.is_stopped():
+		return
 	do_contact_damage()
 
 func do_contact_damage():

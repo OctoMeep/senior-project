@@ -9,6 +9,8 @@ func _ready():
 	contact_dmg = 3
 
 func _physics_process(delta):
+	if not $StartTimer.is_stopped():
+		return
 	match state:
 		State.CHASING:
 			velocity = position.direction_to(player.position).normalized() 

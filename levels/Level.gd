@@ -10,7 +10,10 @@ var wave
 var player
 
 func _ready():
-	print(player)
+	for node in get_children():
+		if node.has_method("activate"):
+			node.connect("level_done", get_parent(), "load_level")
+			node.connect("victory", get_parent(), "win")
 	run_wave()
 
 func run_wave():
@@ -32,13 +35,8 @@ func next_wave():
 
 func finish():
 	for node in get_children():
-		if "active" in node:
-			node.active = true
-
-func leave(next_level):
-	print(next_level)
-	emit_signal("done", next_level)
-
+		if node.has_method("activate"):
+			node.activate(1)
 func message(text, duration):
 	print(text)
 	emit_signal("messaged", text, duration)

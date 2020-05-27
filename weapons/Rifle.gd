@@ -10,4 +10,4 @@ func shoot():
 	bullet.speed = 250
 	bullet.set_target("enemy")
 	bullet.damage = 2
-	
+	bullet.add_collision_exception_with(self.get_parent())

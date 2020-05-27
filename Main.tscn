@@ -12,7 +12,7 @@ levels = {
 "LevelOne": ExtResource( 2 ),
 "LevelTwo": ExtResource( 5 )
 }
-first_level = "LevelTwo"
+first_level = "LevelOne"
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 

@@ -9,6 +9,8 @@ var bullet_speed = 250
 var velocity
 
 func _physics_process(delta):
+	if not $StartTimer.is_stopped():
+		return
 	match state:
 		State.CHASING:
 			if position.distance_to(player.position) < 150:
@@ -34,4 +36,5 @@ func shoot():
 	bullet.speed = bullet_speed
 	bullet.set_target("player")
 	bullet.damage = 2
+	bullet.add_collision_exception_with(self)
 

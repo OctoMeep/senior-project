@@ -14,6 +14,8 @@ func _ready():
 	shoot("none", $ChargeTimer.time_left)
 
 func _physics_process(delta):
+	if not $StartTimer.is_stopped():
+		return
 	match state:
 #		State.CHASING:
 #			if position.distance_to(player.position) < 600:
@@ -49,4 +51,5 @@ func shoot(target, lifetime):
 	laser.set_target(target)
 	laser.damage = 2
 	get_tree().get_current_scene().add_child(laser)
+	laser.add_collision_exception_with(self)
 

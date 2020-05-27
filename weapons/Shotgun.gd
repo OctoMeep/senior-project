@@ -12,4 +12,5 @@ func shoot():
 		bullet.set_target("enemy")
 		bullet.damage = 1
 		bullet.set_lifetime(0.2)
+		bullet.add_collision_exception_with(self.get_parent())
 		

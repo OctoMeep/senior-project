@@ -12,3 +12,4 @@ func shoot():
 	laser.set_target("enemy")
 	laser.damage = 3
 	get_tree().get_current_scene().add_child(laser)
+	laser.add_collision_exception_with(self.get_parent())

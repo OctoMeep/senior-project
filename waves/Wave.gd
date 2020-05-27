@@ -3,6 +3,8 @@ extends Node2D
 signal done
 signal messaged
 
+var PickupHealth = preload("res://pickups/PickupHealth.tscn")
+
 var player
 var kills = 0
 var needed
@@ -41,4 +43,14 @@ func update_kills():
 	print("updating")
 	kills += 1
 	if kills == needed:
+		finalize()
 		emit_signal("done")
+		
+func get_standard_drops():
+	return [{
+		"chance": 0.2,
+		"drop": PickupHealth.instance()
+	}]
+
+func finalize():
+	pass

@@ -8,12 +8,12 @@ func _ready():
 	load_level(first_level)
 
 func load_level(level):
-	call_deferred("load_level_actually", level)
+	call_deferred("_deferred_load_level", level)
 	
-func load_level_actually(level):
+func _deferred_load_level(level):
 	print($Player)
 	if has_node("Level"):
-		$Level.queue_free()
+		$Level.free()
 	var new_level = levels[level].instance()
 	new_level.player = $Player
 	new_level.connect("done", self, "load_level")
@@ -22,3 +22,5 @@ func load_level_actually(level):
 	print(get_children())
 	$Player.position = $Level/StartPoint.position
 	
+func win():
+	print("GG")

@@ -1,7 +1,5 @@
 extends "res://waves/Wave.gd"
 
-var PickupHealth = preload("res://pickups/PickupHealth.tscn")
-
 func _ready():
 	needed = 1
 	yield(get_tree().create_timer(1.0), "timeout")
@@ -12,8 +10,7 @@ func _ready():
 		"chance": 1.0,
 		"drop": PickupHealth.instance()
 	}])
-	enemy.set_physics_process(false)
+	enemy.get_node("StartTimer").wait_time = 5.0
 	message("What's this robot doing here? The warehouse is closed, these guys shouldn't be up and about!", 5)
 	yield(get_tree().create_timer(5.0), "timeout")
-	enemy.set_physics_process(true)
-	message("Woah!\n(LEFT CLICK to use your tazer.)", 1)
+	message("Woah!\n(LEFT CLICK to use your tazer.)", 3)

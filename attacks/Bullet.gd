@@ -1,4 +1,4 @@
-extends Area2D
+extends KinematicBody2D
 
 var speed
 var target
@@ -9,14 +9,10 @@ func _ready():
 	pass # Replace with function body.
 
 func _physics_process(delta):
-	position += Vector2.RIGHT.rotated(rotation) * speed * delta
-
-
-func _on_Area2D_body_entered(body):
-	if body.is_in_group(target):
-		body.hit(damage)
-		queue_free()
-	elif body.is_in_group("wall"):
+	var collision = move_and_collide(Vector2.RIGHT.rotated(rotation) * speed * delta)
+	if collision != null:
+		if collision.collider.is_in_group(target):
+			collision.collider.hit(damage)
 		queue_free()
 
 func set_target(t):
