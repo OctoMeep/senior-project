@@ -11,8 +11,8 @@ var done := false
 func _ready():
 	if count == null: # First in the chain
 		$Sound.play()
-		get_tree().create_timer(lifetime).connect("timeout", self, "queue_free")
-		count = ceil(length / 5)
+		get_tree().create_timer(lifetime).connect("timeout", self, "queue_free") # Only the first segment needs to be manually freed as all the others are its children
+		count = ceil(length / 6) # 6 is the length of a segment. It would be better to avoid hardcoding this
 	if count != 0:
 		next = duplicate(7)
 		next.position = $NextPoint.position
@@ -23,7 +23,7 @@ func _ready():
 		add_child(next)
 
 func _physics_process(delta):
-	if not done:
+	if not done: # Do this only on the first frame. Must be done this way because get_overlapping_bodies doesn't work in _ready
 		for body in get_overlapping_bodies():
 			if body.is_in_group(target):
 				body.hit(damage)

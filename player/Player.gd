@@ -27,11 +27,15 @@ func _ready():
 func _physics_process(delta):
 	$AnimatedSprite.flip_h = get_global_mouse_position().x < global_position.x
 	
+	# Weapon switching
+	
 	if Input.is_action_just_pressed("switch") and off_weapon != null and off_weapon != "":
 		var temp = main_weapon
 		main_weapon = off_weapon
 		off_weapon = temp
 		update_weapon()
+	
+	# Movement
 	
 	var velocity = Vector2()
 	if Input.is_action_pressed("move_left"):
@@ -51,6 +55,9 @@ func _physics_process(delta):
 	move_and_slide(velocity.normalized() * speed)
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
+	
+	# Contact damage
+	
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
 		if (collision.collider.is_in_group("enemy")):

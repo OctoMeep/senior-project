@@ -21,7 +21,7 @@ func set_target(t):
 	target = t
 	$AnimatedSprite.play(target)
 
-func set_lifetime(lifetime):
+func set_lifetime(lifetime): # LifeTimer does not autostart so if this method is not called the bullet lasts forever
 	$LifeTimer.wait_time = lifetime
 	$LifeTimer.start()
 

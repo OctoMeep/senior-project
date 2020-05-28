@@ -24,11 +24,11 @@ func _physics_process(delta):
 				move_and_slide(velocity)
 		State.DASHING:
 			if $ChargeTimer.is_stopped():
-				velocity *= 0.96
-				if (velocity.length() < 25):
+				velocity *= 0.96 # Slow down each frame
+				if (velocity.length() < 25): # Stop when very slow 
 					$AnimatedSprite.play("walking")
 					state = State.CHASING
 				move_and_slide(velocity)
-	$AnimatedSprite.flip_h = velocity.x < 0
+	$AnimatedSprite.flip_h = velocity.x < 0 # Turn in movement direction
 	do_contact_damage()
 

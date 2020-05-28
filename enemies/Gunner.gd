@@ -19,13 +19,13 @@ func _physics_process(delta):
 			else:
 				velocity = position.direction_to(player.position).normalized() * chasing_speed
 				move_and_slide(velocity)
-				$AnimatedSprite.flip_h = velocity.x < 0
+				$AnimatedSprite.flip_h = velocity.x < 0 # Turn in movement direction
 		State.SHOOTING:
 			if position.distance_to(player.position) >= 150:
 				$AnimatedSprite.play("walking")
 				state = State.CHASING
 			elif $ShootTimer.is_stopped():
-				$AnimatedSprite.flip_h = player.global_position.x < global_position.x
+				$AnimatedSprite.flip_h = player.global_position.x < global_position.x # Turn toward player
 				shoot()
 				$ShootTimer.start()
 	do_contact_damage()
@@ -38,5 +38,5 @@ func shoot():
 	bullet.speed = bullet_speed
 	bullet.set_target("player")
 	bullet.damage = 2
-	bullet.add_collision_exception_with(self)
+	bullet.add_collision_exception_with(self) # Avoid blocking own bullets
 
