@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
 [ext_resource path="res://player/Player.png" type="Texture" id=2]
 [ext_resource path="res://player/Player_idle.png" type="Texture" id=3]
+[ext_resource path="res://player/hit.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
@@ -79,6 +80,7 @@ animations = [ {
 [node name="Player" type="KinematicBody2D" groups=[
 "player",
 ]]
+pause_mode = 1
 collision_mask = 14
 script = ExtResource( 1 )
 __meta__ = {
@@ -87,13 +89,18 @@ __meta__ = {
 speed = 100
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -3 )
 scale = Vector2( 0.99, 0.99 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -3 )
 frames = SubResource( 16 )
-frame = 4
+frame = 5
 playing = true
 
 [node name="InvulTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="HitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )

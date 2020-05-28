@@ -1,6 +1,6 @@
 extends "res://pickups/Pickup.gd"
 
-var weapon_type = "Rifle"
+var weapon_type := "Rifle"
 
 func _ready():
 	$AnimatedSprite.play(weapon_type)
@@ -10,7 +10,7 @@ func set_weapon_type(type):
 	$AnimatedSprite.play(weapon_type)
 
 func apply_on_interact(player):
-	if player.off_weapon == null:
+	if player.off_weapon == null or player.off_weapon == "":
 		player.off_weapon = player.main_weapon
 		player.main_weapon = weapon_type
 		player.update_weapon()

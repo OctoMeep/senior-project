@@ -1,8 +1,8 @@
 extends Area2D
 
-var target
-var damage
-var done = false
+var target: String
+var damage: float
+var done := false
 
 func _physics_process(delta):
 	if not done:

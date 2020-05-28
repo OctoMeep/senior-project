@@ -1,7 +1,7 @@
 extends Node2D
 
-var table = []
-var level
+var table := []
+var level: Node
 
 func drop():
 	for entry in table:

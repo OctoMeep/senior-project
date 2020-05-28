@@ -3,7 +3,7 @@
 [ext_resource path="res://font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://ui/StartButton.gd" type="Script" id=2]
 [ext_resource path="res://ui/CreditsButton.gd" type="Script" id=3]
-[ext_resource path="res://ui/ExitButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ui/ExitButton.gd" type="Script" id=4]
 
 [node name="MainMenu" type="MarginContainer"]
 anchor_right = 1.0
@@ -22,21 +22,37 @@ custom_constants/separation = 16
 alignment = 1
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
-margin_top = 90.0
+margin_top = 68.0
 margin_right = 128.0
-margin_bottom = 109.0
+margin_bottom = 87.0
 custom_fonts/font = ExtResource( 1 )
 text = "Start"
 script = ExtResource( 2 )
 
 [node name="CreditsButton" type="Button" parent="VBoxContainer"]
-margin_top = 125.0
+margin_top = 103.0
 margin_right = 128.0
-margin_bottom = 144.0
+margin_bottom = 122.0
 custom_fonts/font = ExtResource( 1 )
 text = "Credits"
 script = ExtResource( 3 )
 
-[node name="ExitButton" parent="VBoxContainer" instance=ExtResource( 4 )]
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
+margin_top = 138.0
+margin_right = 128.0
+margin_bottom = 157.0
+custom_fonts/font = ExtResource( 1 )
+text = "Exit"
+script = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 173.0
+margin_right = 128.0
+margin_bottom = 202.0
+custom_fonts/font = ExtResource( 1 )
+text = "Press F1 to toggle fullscreen!"
+align = 1
+autowrap = true
 [connection signal="pressed" from="VBoxContainer/StartButton" to="VBoxContainer/StartButton" method="_on_StartButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="VBoxContainer/CreditsButton" method="_on_CreditsButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="VBoxContainer/ExitButton" method="_on_ExitButton_pressed"]

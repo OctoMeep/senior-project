@@ -1,15 +1,16 @@
 extends Area2D
 
-var target
-var damage
-var lifetime = 1.0
-var length
-var count
-var next
-var done = false
+var target: String
+var damage: float
+var lifetime := 1.0
+var length: float
+var count: int
+var next: Area2D
+var done := false
 
 func _ready():
 	if count == null: # First in the chain
+		$Sound.play()
 		get_tree().create_timer(lifetime).connect("timeout", self, "queue_free")
 		count = ceil(length / 5)
 	if count != 0:

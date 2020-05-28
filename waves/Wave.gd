@@ -3,14 +3,14 @@ extends Node2D
 signal done
 signal messaged
 
-var PickupHealth = preload("res://pickups/PickupHealth.tscn")
+const PickupHealth = preload("res://pickups/PickupHealth.tscn")
 
-var player
-var kills = 0
-var needed
-var level
+var player: KinematicBody2D
+var kills := 0
+var needed: int
+var level: Node
 
-var screen_size
+var screen_size: Vector2
 
 func _ready():
 	 screen_size = get_viewport_rect().size

@@ -2,8 +2,8 @@ extends "res://enemies/Enemy.gd"
 
 enum State {CHASING, DASHING}
 var state = State.CHASING
-var chasing_speed = 75
-var velocity
+var chasing_speed := 75
+var velocity: Vector2
 
 func _ready():
 	contact_dmg = 3
@@ -29,5 +29,6 @@ func _physics_process(delta):
 					$AnimatedSprite.play("walking")
 					state = State.CHASING
 				move_and_slide(velocity)
+	$AnimatedSprite.flip_h = velocity.x < 0
 	do_contact_damage()
 

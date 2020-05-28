@@ -1,6 +1,6 @@
 extends "res://weapons/Weapon.gd"
 
-var Laser = preload("res://attacks/Laser.tscn")
+const Laser = preload("res://attacks/Laser.tscn")
 
 func shoot():
 	var end = $RayCast2D.get_collision_point()

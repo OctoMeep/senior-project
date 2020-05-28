@@ -13,6 +13,6 @@ func message(text, duration):
 	print(text)
 	$VBoxContainer/MarginContainer/MessageLabel.text = text
 	$VBoxContainer/MarginContainer/MessageLabel.show()
-	yield(get_tree().create_timer(duration), "timeout")
+	yield(get_tree().create_timer(duration, false), "timeout")
 	print($VBoxContainer/MarginContainer/MessageLabel.text)
 	$VBoxContainer/MarginContainer/MessageLabel.hide()

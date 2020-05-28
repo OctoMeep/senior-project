@@ -3,9 +3,9 @@ extends KinematicBody2D
 signal health_update
 
 export var speed: int
-var screen_size
-export var max_health = 10
-var health = max_health
+var screen_size: Vector2
+export var max_health := 10
+var health := max_health
 
 var weapon_types = {
 	"Melee": preload("res://weapons/Melee.tscn"),
@@ -27,7 +27,7 @@ func _ready():
 func _physics_process(delta):
 	$AnimatedSprite.flip_h = get_global_mouse_position().x < global_position.x
 	
-	if Input.is_action_just_pressed("switch") and off_weapon != null:
+	if Input.is_action_just_pressed("switch") and off_weapon != null and off_weapon != "":
 		var temp = main_weapon
 		main_weapon = off_weapon
 		off_weapon = temp
@@ -65,6 +65,7 @@ func hit(damage):
 	if damage <= 0:
 		return
 	if $InvulTimer.is_stopped():
+		$HitSound.play()
 		health -= damage
 		emit_signal("health_update", health)
 		if health <= 0:
@@ -77,4 +78,4 @@ func heal(amount):
 	
 func die():
 	print("rip")
-	get_tree().quit(0)
+	get_tree().change_scene("res://ui/DeathScreen.tscn")

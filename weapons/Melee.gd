@@ -1,6 +1,6 @@
 extends "res://weapons/Weapon.gd"
 
-var Instant = preload("res://attacks/Instant.tscn")
+const Instant = preload("res://attacks/Instant.tscn")
 
 func shoot():
 	var attack = Instant.instance()

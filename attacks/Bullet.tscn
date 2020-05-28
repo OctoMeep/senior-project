@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://attacks/Bullet.gd" type="Script" id=1]
 [ext_resource path="res://attacks/Bullet-player.png" type="Texture" id=2]
 [ext_resource path="res://attacks/Bullet-enemy.png" type="Texture" id=3]
+[ext_resource path="res://attacks/bullet.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
@@ -17,14 +18,14 @@ region = Rect2( 4, 0, 4, 4 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ) ],
-"loop": true,
-"name": "player",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "enemy",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "player",
 "speed": 5.0
 } ]
 
@@ -43,4 +44,7 @@ frames = SubResource( 4 )
 animation = "enemy"
 
 [node name="LifeTimer" type="Timer" parent="."]
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 [connection signal="timeout" from="LifeTimer" to="." method="_on_LifeTimer_timeout"]

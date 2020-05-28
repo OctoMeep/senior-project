@@ -1,6 +1,6 @@
 extends "res://waves/Wave.gd"
 
-var PickupWeapon = preload("res://pickups/PickupWeapon.tscn")
+const PickupWeapon = preload("res://pickups/PickupWeapon.tscn")
 
 func _ready():
 	needed = 1

@@ -1,14 +1,15 @@
 extends "res://enemies/Enemy.gd"
 
-var Laser = preload("res://attacks/Laser.tscn")
+const Laser = preload("res://attacks/Laser.tscn")
 
 enum State {CHASING, CHARGING, SHOOTING}
 var state = State.CHARGING
-var chasing_speed = 300
-var velocity
-var target_pos
+var chasing_speed := 300
+var target_pos: Vector2
 
 func _ready():
+	max_health = 20
+	health = 20
 	$ChargeTimer.start()
 	target_pos = Vector2(player.position.x, player.position.y)
 	shoot("none", $ChargeTimer.time_left)
@@ -36,6 +37,7 @@ func _physics_process(delta):
 				target_pos = Vector2(player.position.x, player.position.y)
 				shoot("none", $ChargeTimer.time_left)
 				state = State.CHARGING
+	$AnimatedSprite.flip_h = player.global_position.x < global_position.x
 	do_contact_damage()
 
 func shoot(target, lifetime):

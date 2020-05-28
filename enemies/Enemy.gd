@@ -2,15 +2,16 @@ extends KinematicBody2D
 
 signal killed
 
-var Drops = preload("res://drops/Drops.tscn")
+const Drops = preload("res://drops/Drops.tscn")
+const Explosion = preload("res://enemies/Explosion.tscn")
 
-var max_health = 10
-var health = 10
-var contact_dmg = 1
-var player
-var drops
-var level
-var dead
+var max_health := 10
+var health := 10
+var contact_dmg := 1
+var player: KinematicBody2D
+var drops: Node2D
+var level: Node
+var dead: bool
 
 func _physics_process(delta):
 	if not $StartTimer.is_stopped():
@@ -34,11 +35,13 @@ func add_drops(table):
 
 func hit(damage):
 	health -= damage
+	$HitSound.play()
 	if health <= 0 and not dead:
 		dead = true
 		die()
 
 func die():
+	get_tree().get_current_scene().add_child(Explosion.instance())
 	emit_signal("killed")
 	if drops != null:
 		drops.drop()

@@ -1,10 +1,10 @@
 extends "res://waves/Wave.gd"
 
-var PickupWeapon = preload("res://pickups/PickupWeapon.tscn")
+const PickupWeapon = preload("res://pickups/PickupWeapon.tscn")
 
 func _ready():
 	needed = 1
-	yield(get_tree().create_timer(1.0), "timeout")
+	yield(get_tree().create_timer(1.0, false), "timeout")
 	message("Since when do we have robots with guns? It must have gotten that from one of the crates.", 5.0)
 	var enemy = spawn("Gunner", Vector2(screen_size.x / 2, screen_size.y / 4), true)
 	var pickup = PickupWeapon.instance()
