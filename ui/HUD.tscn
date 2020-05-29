@@ -1,56 +1,67 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://ui/health_under.png" type="Texture" id=2]
 [ext_resource path="res://ui/HUD.gd" type="Script" id=3]
 [ext_resource path="res://ui/health_progress.png" type="Texture" id=4]
+[ext_resource path="res://ui/pause.png" type="Texture" id=5]
 
 [node name="HUD" type="MarginContainer"]
 pause_mode = 1
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = 2.0
+custom_constants/margin_right = 8
+custom_constants/margin_top = 8
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 8
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_right = 480.0
-margin_bottom = 272.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 472.0
+margin_bottom = 264.0
 custom_constants/separation = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_right = 480.0
-margin_bottom = 24.0
+margin_right = 464.0
+margin_bottom = 16.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
-margin_right = 168.0
-margin_bottom = 24.0
-custom_constants/margin_top = 8
-custom_constants/margin_left = 8
+margin_right = 444.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
 
 [node name="TextureProgress" type="TextureProgress" parent="VBoxContainer/HBoxContainer/MarginContainer"]
-margin_left = 8.0
-margin_top = 8.0
-margin_right = 168.0
-margin_bottom = 24.0
+margin_right = 444.0
+margin_bottom = 16.0
 max_value = 10.0
 value = 10.0
 texture_under = ExtResource( 2 )
 texture_progress = ExtResource( 4 )
 
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+margin_left = 448.0
+margin_right = 464.0
+margin_bottom = 16.0
+texture_normal = ExtResource( 5 )
+
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
-margin_top = 34.0
-margin_right = 480.0
-margin_bottom = 47.0
+margin_top = 26.0
+margin_right = 464.0
+margin_bottom = 39.0
 custom_constants/margin_right = 16
 custom_constants/margin_left = 16
 
 [node name="MessageLabel" type="Label" parent="VBoxContainer/MarginContainer"]
 margin_left = 16.0
-margin_right = 464.0
+margin_right = 448.0
 margin_bottom = 13.0
 custom_fonts/font = ExtResource( 1 )
 align = 1
 autowrap = true
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]

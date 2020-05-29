@@ -1,5 +1,7 @@
 extends Node2D
 
+var level = Node
+
 func _physics_process(delta):
 	look_at(get_global_mouse_position())
 	# rotation increases/decreases continuously if the weapon spins in circles so we need to do all this to lock it to a range of [0, 2 PI]

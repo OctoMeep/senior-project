@@ -1,4 +1,6 @@
 extends MarginContainer
 
+export var link: String
+
 func _on_TextureButton_pressed():
-	get_tree().change_scene("res://Main.tscn")
+	OS.shell_open(link)

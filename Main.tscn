@@ -1,34 +1,36 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
-[ext_resource path="res://levels/LevelOne.tscn" type="PackedScene" id=2]
+[ext_resource path="res://levels/Level1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ui/HUD.tscn" type="PackedScene" id=4]
-[ext_resource path="res://levels/LevelTwo.tscn" type="PackedScene" id=5]
-[ext_resource path="res://levels/LevelThree.tscn" type="PackedScene" id=6]
-[ext_resource path="res://levels/LevelFour.tscn" type="PackedScene" id=7]
+[ext_resource path="res://levels/Level2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://levels/Level4.tscn" type="PackedScene" id=6]
+[ext_resource path="res://levels/Level3.tscn" type="PackedScene" id=7]
 [ext_resource path="res://ui/PauseMenu.tscn" type="PackedScene" id=8]
 
 [node name="Node2D" type="Node2D"]
 pause_mode = 2
 script = ExtResource( 1 )
 levels = {
-"LevelFour": ExtResource( 7 ),
-"LevelOne": ExtResource( 2 ),
-"LevelThree": ExtResource( 6 ),
-"LevelTwo": ExtResource( 5 )
+"Level1": ExtResource( 2 ),
+"Level2": ExtResource( 5 ),
+"Level3": ExtResource( 7 ),
+"Level4": ExtResource( 6 )
 }
-first_level = "LevelOne"
+first_level = "Level1"
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
-main_weapon = "SniperRifle"
-off_weapon = "Shotgun"
+[node name="PlayerLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Player" parent="PlayerLayer" instance=ExtResource( 3 )]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 2
+layer = 3
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource( 4 )]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource( 8 )]
 visible = false
+[connection signal="paused" from="CanvasLayer/HUD" to="." method="toggle_pause"]
 [connection signal="resumed" from="CanvasLayer/PauseMenu" to="." method="toggle_pause"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
 [ext_resource path="res://player/Player.png" type="Texture" id=2]
 [ext_resource path="res://player/Player_idle.png" type="Texture" id=3]
 [ext_resource path="res://player/hit.wav" type="AudioStream" id=4]
+[ext_resource path="res://player/heal.wav" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
@@ -96,7 +97,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -3 )
 frames = SubResource( 16 )
-frame = 5
+frame = 1
 playing = true
 
 [node name="InvulTimer" type="Timer" parent="."]
@@ -104,3 +105,6 @@ one_shot = true
 
 [node name="HitSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+
+[node name="HealSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )

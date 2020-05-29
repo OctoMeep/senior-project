@@ -4,7 +4,7 @@ export var levels := {}
 export var first_level := ""
 
 func _ready():
-	$CanvasLayer/HUD.init($Player)
+	$CanvasLayer/HUD.init($PlayerLayer/Player)
 	load_level(first_level)
 
 func _input(event):
@@ -26,8 +26,10 @@ func _deferred_load_level(level):
 	if has_node("Level"):
 		$Level.free() # queue_free() not needed because this is already deferred
 	var new_level = levels[level].instance()
-	new_level.player = $Player
+	new_level.player = $PlayerLayer/Player
 	new_level.connect("done", self, "load_level")
 	new_level.connect("messaged", $CanvasLayer/HUD, "message")
 	add_child(new_level)
-	$Player.position = $Level/StartPoint.position
+	$PlayerLayer/Player.position = $Level/StartPoint.position
+	$PlayerLayer/Player.level = new_level
+	$PlayerLayer/Player.update_weapon()

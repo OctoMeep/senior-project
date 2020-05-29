@@ -6,11 +6,11 @@ var chasing_speed := 75
 var velocity: Vector2
 
 func _ready():
+	max_health = 5
+	health = 5
 	contact_dmg = 3
 
-func _physics_process(delta):
-	if not $StartTimer.is_stopped():
-		return
+func move_and_attack(delta):
 	match state:
 		State.CHASING:
 			velocity = position.direction_to(player.position).normalized() 
@@ -30,5 +30,3 @@ func _physics_process(delta):
 					state = State.CHASING
 				move_and_slide(velocity)
 	$AnimatedSprite.flip_h = velocity.x < 0 # Turn in movement direction
-	do_contact_damage()
-

@@ -33,6 +33,7 @@ func next_wave():
 		run_wave()
 
 func finish():
+	print("finished")
 	for node in get_children():
 		if node.has_method("activate"): # = If this is a door
 			node.activate()

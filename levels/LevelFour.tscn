@@ -14,9 +14,11 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 
 
 [node name="Door" parent="." index="1" instance=ExtResource( 2 )]
 position = Vector2( 232, 8 )
+is_exit = true
 
 [node name="Door2" parent="." index="2" instance=ExtResource( 2 )]
 position = Vector2( 248, 8 )
+is_exit = true
 
 [node name="Door3" parent="." index="3" instance=ExtResource( 2 )]
 position = Vector2( 232, 264 )

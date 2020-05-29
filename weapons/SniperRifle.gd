@@ -10,5 +10,5 @@ func shoot():
 	laser.position = $StartPoint.global_position
 	laser.rotation = rotation
 	laser.set_target("enemy")
-	laser.damage = 1
-	get_tree().get_current_scene().add_child(laser)
+	laser.damage = 4
+	level.add_child(laser)

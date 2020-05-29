@@ -8,4 +8,4 @@ func shoot():
 	attack.position = $StartPoint.position
 	attack.set_target("enemy")
 	attack.set_lifetime(0.25)
-	attack.damage = 3
+	attack.damage = 2

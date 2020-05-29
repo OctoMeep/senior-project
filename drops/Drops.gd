@@ -10,6 +10,6 @@ func drop():
 			var drop = entry.drop
 			level.add_child(drop)
 			drop.position = Vector2(
-				get_parent().global_position.x + rand_range(-10, 10),
-				get_parent().global_position.y + rand_range(-10, 10)
+				get_parent().position.x + rand_range(-10, 10),
+				get_parent().position.y + rand_range(-10, 10)
 			)

@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/heal.wav-d6deba51d2cfab02761f809455c72a00.sample"
+path="res://.import/heal.wav-ff551153dd85a8796239ab335e47489a.sample"
 
 [deps]
 
-source_file="res://pickups/heal.wav"
-dest_files=[ "res://.import/heal.wav-d6deba51d2cfab02761f809455c72a00.sample" ]
+source_file="res://player/heal.wav"
+dest_files=[ "res://.import/heal.wav-ff551153dd85a8796239ab335e47489a.sample" ]
 
 [params]
 

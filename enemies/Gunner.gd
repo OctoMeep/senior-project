@@ -8,9 +8,7 @@ var chasing_speed := 75
 var bullet_speed := 200
 var velocity: Vector2
 
-func _physics_process(delta):
-	if not $StartTimer.is_stopped():
-		return
+func move_and_attack(delta):
 	match state:
 		State.CHASING:
 			if position.distance_to(player.position) < 150:
@@ -28,11 +26,10 @@ func _physics_process(delta):
 				$AnimatedSprite.flip_h = player.global_position.x < global_position.x # Turn toward player
 				shoot()
 				$ShootTimer.start()
-	do_contact_damage()
 
 func shoot():
 	var bullet = Bullet.instance()
-	get_tree().get_current_scene().add_child(bullet)
+	level.add_child(bullet)
 	bullet.position = position
 	bullet.rotation = PI + position.angle_to_point(player.position)
 	bullet.speed = bullet_speed

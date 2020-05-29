@@ -12,11 +12,17 @@ var player: KinematicBody2D
 var drops: Node2D
 var level: Node
 var dead: bool
+var is_lasered := false
 
 func _physics_process(delta):
+	is_lasered = false
 	if not $StartTimer.is_stopped(): # Create a brief delay before an enemy starts moving so the player does not get instantly shot by a new enemy
 		return
+	move_and_attack(delta)
 	do_contact_damage()
+
+func move_and_attack(delta): # Subclasses override this as if it were _physics_process to avoid overriding the other code in that method
+	pass
 
 func do_contact_damage():
 	for i in get_slide_count():

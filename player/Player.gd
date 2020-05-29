@@ -6,6 +6,8 @@ export var speed: int
 var screen_size: Vector2
 export var max_health := 10
 var health := max_health
+var is_lasered = false
+var level: Node
 
 var weapon_types = {
 	"Melee": preload("res://weapons/Melee.tscn"),
@@ -25,6 +27,7 @@ func _ready():
 
 
 func _physics_process(delta):
+	is_lasered = false
 	$AnimatedSprite.flip_h = get_global_mouse_position().x < global_position.x
 	
 	# Weapon switching
@@ -67,6 +70,7 @@ func update_weapon():
 	weapon.queue_free()
 	weapon = weapon_types[main_weapon].instance()
 	add_child(weapon)
+	weapon.level = level
 
 func hit(damage):
 	if damage <= 0:
@@ -80,6 +84,7 @@ func hit(damage):
 		$InvulTimer.start()
 
 func heal(amount):
+	$HealSound.play()
 	health = clamp(health + amount, 0, max_health)
 	emit_signal("health_update", health)
 	

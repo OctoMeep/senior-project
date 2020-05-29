@@ -7,7 +7,10 @@ export var is_exit := false
 var active := false
 
 func activate():
+	print(is_exit)
 	if next_level != "" or is_exit:
+		$AnimatedSprite.play()
+		remove_child($Block) # Allow player to go through the door once it is active
 		active = true
 
 func _on_Area2D_body_entered(body):

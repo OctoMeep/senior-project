@@ -1,6 +1,4 @@
-extends Button
+extends MarginContainer
 
-func _on_ExitButton_pressed():
-	if OS.window_fullscreen:
-		OS.window_fullscreen = false
+func _on_TextureButton_pressed():
 	get_tree().quit(0)

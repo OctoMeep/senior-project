@@ -1,4 +1,4 @@
-extends Button
+extends MarginContainer
 
-func _on_CreditsButton_pressed():
+func _on_TextureButton_pressed():
 	get_tree().change_scene("res://ui/Credits.tscn")

@@ -1,5 +1,7 @@
 extends MarginContainer
 
+signal paused
+
 func init(player):
 	$VBoxContainer/HBoxContainer/MarginContainer/TextureProgress.max_value = player.max_health
 	$VBoxContainer/HBoxContainer/MarginContainer/TextureProgress.value = player.health
@@ -16,3 +18,6 @@ func message(text, duration):
 	yield(get_tree().create_timer(duration, false), "timeout")
 	print($VBoxContainer/MarginContainer/MessageLabel.text)
 	$VBoxContainer/MarginContainer/MessageLabel.hide()
+
+func _on_TextureButton_pressed():
+	emit_signal("paused")
