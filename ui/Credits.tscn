@@ -23,9 +23,9 @@ margin_bottom = 262.0
 alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2"]
-margin_top = 52.0
+margin_top = 55.0
 margin_right = 464.0
-margin_bottom = 76.0
+margin_bottom = 79.0
 
 [node name="Label4" type="Label" parent="VBoxContainer2/HBoxContainer"]
 margin_top = 5.0
@@ -42,9 +42,9 @@ margin_right = 464.0
 link = "https://godotengine.org"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer2"]
-margin_top = 80.0
+margin_top = 83.0
 margin_right = 464.0
-margin_bottom = 112.0
+margin_bottom = 115.0
 
 [node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer2"]
 margin_top = 1.0
@@ -63,28 +63,28 @@ custom_constants/margin_bottom = 8
 link = "https://0x72.itch.io/16x16-robot-tileset"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer2"]
-margin_top = 116.0
+margin_top = 119.0
 margin_right = 464.0
-margin_bottom = 145.0
+margin_bottom = 143.0
 
 [node name="Label2" type="Label" parent="VBoxContainer2/HBoxContainer3"]
+margin_top = 5.0
 margin_right = 332.0
-margin_bottom = 29.0
+margin_bottom = 18.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
-text = "All other sprites courtesy of my friend, who doesn't have a website I can link"
+text = "All other sprites courtesy of my friend pixelpacker on fiverr"
 autowrap = true
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2/HBoxContainer3"]
+[node name="MarginContainer4" parent="VBoxContainer2/HBoxContainer3" instance=ExtResource( 3 )]
 margin_left = 336.0
 margin_right = 464.0
-margin_bottom = 29.0
-custom_constants/margin_right = 128
+link = "https://www.fiverr.com/pixelpacker/make-2d-pixel-art-sprites-for-your-game"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer2"]
-margin_top = 149.0
+margin_top = 147.0
 margin_right = 464.0
-margin_bottom = 173.0
+margin_bottom = 171.0
 
 [node name="Label3" type="Label" parent="VBoxContainer2/HBoxContainer4"]
 margin_top = 5.0
@@ -95,14 +95,14 @@ custom_fonts/font = ExtResource( 1 )
 text = "Sound effects generated using sfxr"
 autowrap = true
 
-[node name="MarginContainer4" parent="VBoxContainer2/HBoxContainer4" instance=ExtResource( 3 )]
+[node name="MarginContainer5" parent="VBoxContainer2/HBoxContainer4" instance=ExtResource( 3 )]
 margin_left = 336.0
 margin_right = 464.0
 link = "http://www.drpetter.se/project_sfxr.html"
 
 [node name="MarginContainer" parent="VBoxContainer2" instance=ExtResource( 2 )]
-margin_top = 177.0
+margin_top = 175.0
 margin_right = 464.0
-margin_bottom = 201.0
+margin_bottom = 199.0
 custom_constants/margin_right = 168
 custom_constants/margin_left = 168
